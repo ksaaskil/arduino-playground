@@ -1,0 +1,5 @@
+MadMax KEYWORD1
+break KEYWORD2
+forward KEYWORD2
+backward KEYWORD2
+
