@@ -1,0 +1,5 @@
+libraries/Adafruit*
+libraries/SparkFun*
+libraries/TinyGps*
+libraries/readme.txt
+.DS_Store
