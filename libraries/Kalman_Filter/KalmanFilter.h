@@ -9,9 +9,9 @@ public:
   float getVariance();
   void setMean(float m);
   void setVariance(float P);
-  void setMeasurementNoise();
-  void setProcessNoise(); // TODO
-  void update(float y);
+  void setModelVariance(float Q);
+  void setMeasurementVariance(float R);
+  void update(float measurement);
 private:
   float m, R, P, Q;
 };

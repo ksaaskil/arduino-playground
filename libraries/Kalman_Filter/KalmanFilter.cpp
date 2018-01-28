@@ -5,6 +5,7 @@
 KalmanFilter::KalmanFilter() {
   R = 0.03f;
   P = 0.03f;
+  Q = 0.03f;
   m = 0.0f;
 }
 
@@ -16,25 +17,25 @@ float KalmanFilter::getVariance() {
   return P;
 }
 
-void KalmanFilter::setMean(m) {
+void KalmanFilter::setMean(float m) {
   this -> m = m;
 }
 
-void KalmanFilter::setVariance(P) {
+void KalmanFilter::setVariance(float P) {
   this -> P = P;
 }
 
-void KalmanFilter::setMeasurementNoise(Q) {
+void KalmanFilter::setModelVariance(float Q) {
   this -> Q = Q;
 }
 
-void KalmanFilter::setMeasurementNoise(r) {
-  this -> r = R;
+void KalmanFilter::setMeasurementVariance(float R) {
+  this -> R = R;
 }
 
-void KalmanFilter::update(float y) {
+void KalmanFilter::update(float measurement) {
   m = m;
   P = P + Q;
-  m = m + P / (P + R) * (y - m);
+  m = m + P / (P + R) * (measurement - m);
   P = P - P * P / (P + R);
 }
